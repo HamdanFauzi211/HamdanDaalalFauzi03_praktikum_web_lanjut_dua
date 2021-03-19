@@ -1,3 +1,6 @@
+@entends('layouts.app')
+@section('content')
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,17 +82,19 @@ http://www.templatemo.com/tm-466-cafe-house
             <div class="tm-hr-container"><hr class="tm-hr"></div>
           </div>
           <div class="col-lg-12 tm-popular-items-container">
+          @foreach($data as $item)
             <div class="tm-popular-item">
               <img src="img/popular-1.jpg" alt="Popular" class="tm-popular-item-img">
               <div class="tm-popular-item-description">
-                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>mericano</h3><hr class="tm-popular-item-hr">
-                <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque. sed ipsum.</p>
+                <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">a</span>{{$item -> title}}/h3><hr class="tm-popular-item-hr">
+                <p>{{$item -> content}}.</p>
                 <div class="order-now-container">
                   <a href="#" class="order-now-link tm-handwriting-font">Order Now</a>
                 </div>
               </div>              
             </div>
-            <div class="tm-popular-item">
+            @endforeach
+            <!--div class="tm-popular-item">
               <img src="img/popular-2.jpg" alt="Popular" class="tm-popular-item-img">
               <div class="tm-popular-item-description">
                 <h3 class="tm-handwriting-font tm-popular-item-title"><span class="tm-handwriting-font bigger-first-letter">c</span>appuccino</h3><hr class="tm-popular-item-hr">
@@ -140,7 +145,7 @@ http://www.templatemo.com/tm-466-cafe-house
               </div>              
             </div>
           </div>       
-        </section>
+        </section-->
         <section class="tm-section">
           <div class="row">
             <div class="col-lg-12 tm-section-header-container">
